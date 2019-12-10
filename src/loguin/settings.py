@@ -25,8 +25,13 @@ SECRET_KEY = '_hymsw%^8*deg7)6f^c36v*+@igg2671%t@usa!n68)1h28%e0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] #aca nose que puerto poner probe con varios
 
+EMAIL_HOST = "smtp@gmail.com"
+EMAIL_HOST_USER = "reydecopp@gmail.com"
+EMAIL_HOST_PASSWORD = "Reydecop14"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
@@ -119,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
