@@ -25,13 +25,7 @@ SECRET_KEY = '_hymsw%^8*deg7)6f^c36v*+@igg2671%t@usa!n68)1h28%e0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [] #aca nose que puerto poner probe con varios
-
-EMAIL_HOST = "smtp@gmail.com"
-EMAIL_HOST_USER = "reydecopp@gmail.com"
-EMAIL_HOST_PASSWORD = "Reydecop14"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -126,3 +120,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'reydecopp@gmail.com'
+EMAIL_HOST_PASSWORD = 'reydecop14'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
