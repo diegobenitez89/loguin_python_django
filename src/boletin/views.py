@@ -31,7 +31,7 @@ def inicio(request):
         print (instance.timestamp)
 
     
-    return render(request, "inicio.html", context)
+    return render(request, "base.html", context)
 
 def contact(request):
     form =  ContactForm(request.POST or None)
