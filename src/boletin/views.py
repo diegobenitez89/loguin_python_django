@@ -6,7 +6,7 @@ from .forms import RegModelForm, ContactForm
 from .models import Registrado
 
 def inicio(request):
-    titulo = "hola"
+    titulo = "Bienvenidos"
     if request.user.is_authenticated:
         titulo = "Bienvenido %s" %(request.user)
     form = RegModelForm(request.POST or None)
@@ -31,9 +31,10 @@ def inicio(request):
         print (instance.timestamp)
 
     
-    return render(request, "base.html", context)
+    return render(request, "inicio.html", context)
 
 def contact(request):
+    titulo = "Contacto"
     form =  ContactForm(request.POST or None)
     if form.is_valid():
         form_email = form.cleaned_data.get("email")
@@ -52,6 +53,7 @@ def contact(request):
 
 
     context = {
-        "form" : form
+        "form" : form,
+        "titulo" : titulo,
     }
     return render (request, "forms.html", context)
