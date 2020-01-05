@@ -2,50 +2,90 @@
 {% load crispy_forms_tags %}
 
 {% block head_title %}Bienvenidos|{% endblock %}
-{% block jumbotron %}
-<div class="jumbotron">
 
+<style>
+{% block style %}
+.jumbotron {
+    background-color: #14213D!important;
+    color: white !important;
+}
+.fa-5x {
+    color: orange;
+}
+
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+
+{% if request.user.is_staff %}
+<table class="table">
+{% for instance in queryset %}
+<tr><td>{{ instance }}</td><td>{{ instance.nombre}}</td><td>hace {{ instance.timestamp|timesince}}</td></tr> </br>
+{% endfor %}
+</table>
+{% else %}
+
+<div class="jumbotron">
+<div class="container">
 <div class="row">
     <div class="col-sm-6">
         <h1>inicio</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
+        <p>Mudo putoooooooo eheheheh ohooooooooooooooooo</p>
             <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Unete &raquo;</a>
         </p>
 
     </div>
-    <div class="col-sm-6" style="background-color:black; height:300px;"></div>
+    <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/MowEVZScf6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </div>
-
 </div>
+</div>
+{% endif %}
 {% endblock %}
 {{ titulo }}<br>
 {{ request.user }}<br>
 
 <hr/>
 <br/>
+
 {% block content %}
-
-
+{% if not request.user.is_staff%}
 <div class="row">
     <div class="col-sm-3 col-xs-12 pull-right">
-        <p class="lead text-align-center">{{ titulo }}</p>
+        {% if not user.is_authenticated %}
+
+        <p class="lead text-align-center">Suscribirte</p>
+
+
         <form method="POST" action="">{% csrf_token %}
         {{ el_form|crispy }}
-        <input class="btn btn-lg btn-primary" type="submit" value="Registrarme"/>
+        <input class="btn btn-lg btn-primary" type="submit" value="Enviar"/>
         </form>
+        {% else %}
+        <p class="lead text-align-center">{{ titulo }}</p></br><i class="fas fa-thumbs-up fa-5x"style="color: black"></i></p>
+
+        {% endif %}
 </div>
 <div class="col-sm-3">
-    <p class="lead text-align-center">creado con django &amp; boostrap</p>
+    <p class="lead text-align-center">Basketball</br></br>
+        <i class="fas fa-basketball-ball fa-spin fa-5x"></i>
+    </p>
 </div>
 <div class="col-sm-3">
-    <p class="lead text-align-center">creado con django &amp; boostrap</p>
+    <p class="lead text-align-center">boostrap</br></br>
+        <i class="far fa-laugh-wink fa-5x" style="color: rgb(16, 119, 110)"></i>
+
+    </p>
 </div>
 <div class="col-sm-3">
-    <p class="lead text-align-center">creado con django &amp; boostrap</p>
+    <p class="lead text-align-center">creado con d</br></br>
+        <i class="fas fa-basketball-ball fa-spin fa-5x"></i>
+
+
+    </p>
 </div>
 </div>
 
 </hr>
+{% endif %}
 {% endblock %}

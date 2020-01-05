@@ -8,7 +8,7 @@ from .models import Registrado
 def inicio(request):
     titulo = "Bienvenidos"
     if request.user.is_authenticated:
-        titulo = "Bienvenido %s" %(request.user)
+        titulo = "Bienvenid@ %s" %(request.user)
     form = RegModelForm(request.POST or None)
     
     context = {
@@ -27,10 +27,14 @@ def inicio(request):
         context = {
             "titulo" : "gracias %s!" %(nombre)
         }
-        print (instance)
+        print (instance.nombre)
         print (instance.timestamp)
 
-    
+    if request.user.is_authenticated and request.user.is_staff:
+        queryset = Registrado.objects.all().order_by("-timestamp")
+        context = {
+            "queryset": queryset,
+        }
     return render(request, "inicio.html", context)
 
 def contact(request):
