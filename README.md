@@ -23,7 +23,7 @@
 - urllib3==1.25.7
 - virtualenv==16.7.7
 
-
+---
 
 1. Instalación - PIP, Python & Django
 
