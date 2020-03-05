@@ -25,10 +25,14 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', about, name='about'),
     path('admin/', admin.site.urls),
+
+
     re_path(r'^accounts/', include('registration.backends.default.urls')),
 
 
 ]
+
+admin.site.site_header = "Administracion de app Control de Stock"
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

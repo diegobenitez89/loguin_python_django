@@ -4,7 +4,6 @@ from django.shortcuts import render
 
 from .forms import RegModelForm, ContactForm
 from .models import Registrado
-
 def inicio(request):
     titulo = "Bienvenidos"
     if request.user.is_authenticated:
@@ -61,3 +60,6 @@ def contact(request):
         "titulo" : titulo,
     }
     return render (request, "forms.html", context)
+
+
+

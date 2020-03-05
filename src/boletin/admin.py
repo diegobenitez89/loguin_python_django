@@ -2,7 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 from .forms import RegModelForm
-from .models import Registrado
+from .models import Registrado, Producto
+
 
 class AdminRegistrado(admin.ModelAdmin):
     list_display = ["email","nombre","timestamp"]
@@ -15,3 +16,14 @@ class AdminRegistrado(admin.ModelAdmin):
     #class Meta:
     #    model = Registrado
 admin.site.register(Registrado,AdminRegistrado)
+
+
+class ProductoAdmin(admin.ModelAdmin):
+    list_display = ["nombre","precio","stock"]
+    search_fields = ["nombre"] 
+    list_per_page = 10
+
+
+
+
+admin.site.register(Producto,ProductoAdmin)
