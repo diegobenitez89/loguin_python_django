@@ -1,4 +1,7 @@
-# Página web con registro de usuario, autentificación de usuario, formulario de contacto configurado con email. La app esta diseñada y desarrollada con HTML5, CSS3, Bootstrap 4, JQuery, Django y SQLite3. Contiene archivos estáticos de Bootstrap y JQuery para acelerar la carga de las mismas. Tiene un backend soportado por Django 2.2.7 que aporta carga de templates dinámicamente además de aportar un administrador de usuario para la carga de nuevos usuarios y stock de productos con BBdd. Python 3.7 by Django 2.2.7
+# Página web con registro de usuario, autentificación de usuario, formulario de contacto configurado con email.
+---
+
+La app esta diseñada y desarrollada con HTML5, CSS3, Bootstrap 4, JQuery, Django y SQLite3. Contiene archivos estáticos de Bootstrap y JQuery para acelerar la carga de las mismas. Tiene un backend soportado por Django 2.2.7 que aporta carga de templates dinámicamente además de aportar un administrador de usuario para la carga de nuevos usuarios y stock de productos con BBdd. Python 3.7 by Django 2.2.7
 
 ## Tecnologias utilizadas
 
