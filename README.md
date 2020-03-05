@@ -1,4 +1,4 @@
-# Pagina web con registro de usuario, autentificacion de usuario, formulario de contacto configurado con email.
+# Página web con registro de usuario, autentificación de usuario, formulario de contacto configurado con email.
 
 ## Tecnologias utilizadas
 
